@@ -1,5 +1,5 @@
 name: Everyone's New Jekyll Site
-url: localhost:4000
+url: http://www.instamatique.com/portfolio/
 markdown: kramdown
-pygments: true
+pygments: false
 permalink: none
