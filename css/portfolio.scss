@@ -1,6 +1,7 @@
 /*This CSS generated with Sass and written by Lea Albaugh.*/
 
 $background-color: #ffffff;
+$excess-background-color: #cccccc;
 $text-color: #333333;
 
 $serif: "PT Serif", serif;
@@ -13,11 +14,18 @@ $link-color: darken($link-color-base, 25);
 $link-visited-color: darken($link-color-base, 30);
 $link-hover-color: darken($link-color-base, 15);
 
+$media-mobile-max: 767px;
+$media-tablet-min: 768px;
+$media-tablet-max: 1024px;
+$media-desktop-min: 1025px;
+
 @mixin border-box {
   box-sizing: border-box;
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box; 
 }
+
+@import "flex";
 
 * {
   margin: 0;
@@ -26,12 +34,47 @@ $link-hover-color: darken($link-color-base, 15);
   /*outline: 1px red solid;*/
 }
 
-html, body { 
+html {
 	height: 100%; 
 	width: 100%;
+	background-color: $excess-background-color;
+}
+
+body { 
+	height: 100%; 
+	max-width: 1350px;
+	margin: 0 auto;
 	background-color: $background-color;
 	color: $text-color;
 	font-family: $sans;
+}
+
+.site {
+	background-color: $background-color;
+}
+
+.header {
+	@include flex(1);
+	font-family: $header-font;
+	padding:15px;
+}
+
+.projects {
+	@include flex(5);
+	p {
+		padding-top: 0.75em;
+	}
+}
+
+.footer {
+	@include flex(1);
+	font-family: $serif;
+	align-self: flex-end;
+	padding: 15px;
+}
+
+.project + .project {
+	padding-top: 10px;
 }
 
 a {
@@ -46,41 +89,46 @@ a {
 }
 
 img {
-	max-width: 95%;
-	max-height: 95%;
-	margin: 0 auto;
+	max-width: 100%;
 	outline: 1px #ccc solid;
-/*	box-shadow: 0 0 0 1px #f8fbff, 0 0 0 2px #ccc;*/
 }
 
 
-.header {
-	font-family: $header-font;
-}
 
+/*---------------Presto chango------------------------*/
 
-.site {
-	width:70%;
-	margin: 0 auto;
-}
-
-
-.project {
-	display: inline-block;
-	max-width: 30%;
-	max-height: 500px;
-	.title {
-		font-family: $serif;
-		font-size: 1.5em;
+@media only screen and (max-width: $media-mobile-max) {
+	.site {
+		@include flexbox;
+		@include flex-dir(column);
+		@include align-items(center);
 	}
-	preview-image {
-		max-width: 95%;
-		max-height: 95%;
+	.projects {
+		padding:8%;
+	}
+	.header {
+		text-align: center;
+		span + span:before {
+			content:"/";
+		}
 	}
 }
 
-.footer {
-	clear: both;
-	width: 100%;
-	text-align: right;
+@media only screen and (min-width: $media-mobile-max) {
+	.site {
+		@include flexbox;
+		@include flex-dir(row);
+		min-height: 100%;
+	}
+	.projects {
+		max-width: 50%;
+		padding:15px;
+	}
+	.header {
+		text-align: right;
+		span {
+			display:block;
+		}
+	}
 }
+
