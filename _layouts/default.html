@@ -13,13 +13,13 @@
         <div class="site">
           <div class="header">
             <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
+            <p><a href="{{ site.url }}/about">About</a>
           </div>
 
           {{ content }}
 
           <div class="footer">
-            Copyright Lea
+            Copyright Lea <br><a href="{{ site.url }}/rss.xml">RSS here</a>
           </div>
         </div>
     </body>
