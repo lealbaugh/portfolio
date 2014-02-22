@@ -3,17 +3,20 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
+        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
         <meta name="viewport" content="width=device-width">
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/portfolio.css">
+        <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
         <div class="site">
           <div class="header">
             <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <span class="about"><a href="{{ site.root }}/about">About</span> <span class="rss"><a href="{{ site.root }}/rss.xml">RSS here</a></span>
+            <span class="about"><a href="{{ site.root }}/about">About</span> <span class="rss"><a href="{{ site.root }}/rss.xml">RSS</a></span> <span class="other"><a href="flooblegarb">An unvisited link</a></span>
           </div>
           {{ content }}
           <div class="footer">

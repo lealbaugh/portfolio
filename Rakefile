@@ -92,7 +92,7 @@ task :new_project, :title, :preview do
     post.puts "preview-image: \"#{preview}\""
     post.puts "---"
   end
-  exec "open #{filename}"
+  # exec "open #{filename}"
 end
 
 

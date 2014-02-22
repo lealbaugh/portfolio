@@ -1,0 +1,86 @@
+/*This CSS generated with Sass and written by Lea Albaugh.*/
+
+$background-color: #ffffff;
+$text-color: #333333;
+
+$serif: "PT Serif", serif;
+$header-font: "Bitter", serif;
+$sans: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
+
+$link-color-base: #5ccbd7;
+$link-color: darken($link-color-base, 25);
+$link-visited-color: darken($link-color-base, 30);
+$link-hover-color: darken($link-color-base, 15);
+
+@mixin border-box {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  @include border-box;
+  /*outline: 1px red solid;*/
+}
+
+html, body { 
+	height: 100%; 
+	width: 100%;
+	background-color: $background-color;
+	color: $text-color;
+	font-family: $sans;
+}
+
+a {
+	text-decoration: none;
+	color: $link-color;
+	&:visited {
+	  color: $link-visited-color;
+	}
+	&:hover {
+	  color: $link-hover-color;
+	}
+}
+
+img {
+	max-width: 95%;
+	max-height: 95%;
+	margin: 0 auto;
+	outline: 1px #ccc solid;
+/*	box-shadow: 0 0 0 1px #f8fbff, 0 0 0 2px #ccc;*/
+}
+
+
+.header {
+	font-family: $header-font;
+}
+
+
+.site {
+	width:70%;
+	margin: 0 auto;
+}
+
+
+.project {
+	display: inline-block;
+	max-width: 30%;
+	max-height: 500px;
+	.title {
+		font-family: $serif;
+		font-size: 1.5em;
+	}
+	preview-image {
+		max-width: 95%;
+		max-height: 95%;
+	}
+}
+
+.footer {
+	clear: both;
+	width: 100%;
+	text-align: right;
+}
