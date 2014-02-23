@@ -60,10 +60,13 @@ body {
 }
 
 .projects {
-	@include flex(5);
+	@include flex(10);
 	p {
-		padding-top: 0.75em;
-	}
+		padding-top: 0.5em;
+		img + img {
+			margin-top: 0.5em;
+		}
+	}	
 }
 
 .footer {
@@ -74,7 +77,12 @@ body {
 }
 
 .project + .project {
-	padding-top: 10px;
+	padding-top: 0.5em;
+}
+
+.about {
+	@extend .projects;
+	@include align-self(baseline);
 }
 
 a {
@@ -113,6 +121,7 @@ img {
 		@include flexbox;
 		@include flex-dir(column);
 		@include align-items(center);
+		min-height: 100%;
 	}
 	.projects {
 		padding-right:8%;

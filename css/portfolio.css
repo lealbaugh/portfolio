@@ -33,15 +33,17 @@ body {
   font-family: "Bitter", serif;
   padding: 15px; }
 
-.projects {
-  -webkit-box-flex: 5;
-  -webkit-flex: 5;
-  -moz-box-flex: 5;
-  -moz-flex: 5;
-  -ms-flex: 5;
-  flex: 5; }
-  .projects p {
-    padding-top: 0.75em; }
+.projects, .about {
+  -webkit-box-flex: 10;
+  -webkit-flex: 10;
+  -moz-box-flex: 10;
+  -moz-flex: 10;
+  -ms-flex: 10;
+  flex: 10; }
+  .projects p, .about p {
+    padding-top: 0.5em; }
+    .projects p img + img, .about p img + img {
+      margin-top: 0.5em; }
 
 .footer {
   -webkit-box-flex: 1;
@@ -55,7 +57,13 @@ body {
   padding: 15px; }
 
 .project + .project {
-  padding-top: 10px; }
+  padding-top: 0.5em; }
+
+.about {
+  -webkit-align-self: baseline;
+  -moz-align-self: baseline;
+  -ms-flex-item-align: baseline;
+  align-self: baseline; }
 
 a {
   text-decoration: none;
@@ -95,9 +103,10 @@ img {
     -ms-flex-align: center;
     -webkit-align-items: center;
     -moz-align-items: center;
-    align-items: center; }
+    align-items: center;
+    min-height: 100%; }
 
-  .projects {
+  .projects, .about {
     padding-right: 8%;
     padding-left: 8%; }
 
@@ -120,7 +129,7 @@ img {
     flex-direction: row;
     min-height: 100%; }
 
-  .projects {
+  .projects, .about {
     max-width: 50%;
     padding: 15px; }
 
