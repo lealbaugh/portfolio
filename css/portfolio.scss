@@ -9,10 +9,9 @@ $header-font: "Bitter", serif;
 $sans: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
 
-$link-color-base: #5ccbd7;
-$link-color: darken($link-color-base, 25);
-$link-visited-color: darken($link-color-base, 30);
-$link-hover-color: darken($link-color-base, 15);
+$link-color: darken(#00c2ce,5);
+$link-visited-color: $link-color;
+$link-hover-color: $link-color;
 
 $media-mobile-max: 767px;
 $media-tablet-min: 768px;
@@ -25,7 +24,38 @@ $media-desktop-min: 1025px;
   -moz-box-sizing: border-box; 
 }
 
+
+@mixin rotate($degrees, $vertcorner, $horcorner) {
+  /* Safari */
+  -webkit-transform-origin: $vertcorner $horcorner;
+  -webkit-transform: rotate($degrees);
+  /* Firefox */
+  -moz-transform-origin: $vertcorner $horcorner;
+  -moz-transform: rotate($degrees);
+  /* IE */
+  -ms-transform-origin: $vertcorner $horcorner;
+  -ms-transform: rotate($degrees);
+  /* Opera */
+  -o-transform-origin: $vertcorner $horcorner;
+  -o-transform: rotate($degrees);
+  /* Internet Explorer */
+  @if $degrees == 90deg {filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);}
+  @else if $degrees == 180deg {filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);}
+  @else if $degrees == -90deg {filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);}
+  @else {filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);}
+}
+
+@mixin verticalH2 ($percentage) {
+  text-align: right;
+  position: relative;
+  right:$percentage;
+  @include rotate(-90deg, bottom, right);
+  top:-1em;
+}
+
 @import "flex";
+
+/*-----------Main Elements----------------------------------------*/
 
 * {
   margin: 0;
@@ -124,6 +154,7 @@ img {
 		min-height: 100%;
 	}
 	.projects {
+		max-width: 100%;
 		padding-right:8%;
 		padding-left:8%;
 	}
@@ -147,6 +178,9 @@ img {
 	}
 	.header {
 		text-align: right;
+/*		h1 {
+			@include rotate(-90deg, bottom, right);
+		}*/
 		span {
 			display:block;
 		}

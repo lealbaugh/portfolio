@@ -1,4 +1,5 @@
 /*This CSS generated with Sass and written by Lea Albaugh.*/
+/*-----------Main Elements----------------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -67,11 +68,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #238690; }
+  color: #00aab4; }
   a:visited {
-    color: #1e737c; }
+    color: #00aab4; }
   a:hover {
-    color: #2dabb9; }
+    color: #00aab4; }
 
 img {
   max-width: 100%;
@@ -107,6 +108,7 @@ img {
     min-height: 100%; }
 
   .projects, .about {
+    max-width: 100%;
     padding-right: 8%;
     padding-left: 8%; }
 
@@ -134,7 +136,10 @@ img {
     padding: 15px; }
 
   .header {
-    text-align: right; }
+    text-align: right;
+    /*		h1 {
+    			@include rotate(-90deg, bottom, right);
+    		}*/ }
     .header span {
       display: block; } }
 /*----------Videos----------------------------------*/
