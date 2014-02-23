@@ -4,4 +4,9 @@ layout: default
 <div class="projects">
 	{% if page.preview-image %}<img src="{{ site.root }}/img/{{ page.preview-image }}">{% endif %}
 	{{ content }}
+
+	<div class="nav">
+		{% if page.previous.url %} <a class="prev" href="{{page.previous.url}}">&laquo;Previous</a>{% endif %} 
+	    {% if page.next.url %}<a class="next" href="{{page.next.url}}">Next&raquo;</a>{% endif %} 
+	</div>
 </div>

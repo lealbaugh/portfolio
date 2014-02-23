@@ -69,6 +69,14 @@ img {
   max-width: 100%;
   outline: 1px #ccc solid; }
 
+.nav {
+  width: 100%;
+  padding-top: 0.75em; }
+  .nav a.prev {
+    float: left; }
+  .nav a.next {
+    float: right; }
+
 /*---------------Presto chango------------------------*/
 @media only screen and (max-width: 767px) {
   .site {
@@ -90,7 +98,8 @@ img {
     align-items: center; }
 
   .projects {
-    padding: 8%; }
+    padding-right: 8%;
+    padding-left: 8%; }
 
   .header {
     text-align: center; }

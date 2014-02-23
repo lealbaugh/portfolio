@@ -3,3 +3,4 @@ url: http://www.instamatique.com/portfolio/
 markdown: kramdown
 pygments: false
 permalink: none
+exclude: [Rakefile]

@@ -93,6 +93,17 @@ img {
 	outline: 1px #ccc solid;
 }
 
+.nav {
+	width: 100%;
+	padding-top: 0.75em;
+	a.prev {
+		float:left;
+	}
+	a.next {
+		float:right;
+	}
+}
+
 
 
 /*---------------Presto chango------------------------*/
@@ -104,7 +115,8 @@ img {
 		@include align-items(center);
 	}
 	.projects {
-		padding:8%;
+		padding-right:8%;
+		padding-left:8%;
 	}
 	.header {
 		text-align: center;
