@@ -43,7 +43,7 @@ body {
   flex: 10; }
   .projects p, .about p {
     padding-top: 0.5em; }
-    .projects p img + img, .about p img + img {
+    .projects p img + img, .about p img + img, .projects p .videoWrapper + img, .about p .videoWrapper + img, .projects p img + .videoWrapper, .about p img + .videoWrapper, .projects p .videoWrapper + .videoWrapper, .about p .videoWrapper + .videoWrapper {
       margin-top: 0.5em; }
 
 .footer {
@@ -74,9 +74,9 @@ a {
   a:hover {
     color: #00aab4; }
 
-img {
+img, .videoWrapper {
   max-width: 100%;
-  outline: 1px #ccc solid; }
+  outline: 10px #ccc solid; }
 
 .nav {
   width: 100%;

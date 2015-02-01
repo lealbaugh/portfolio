@@ -6,7 +6,7 @@
         <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
         <meta name="viewport" content="width=device-width">
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/portfolio.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/portfolio.css">
         <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
@@ -15,8 +15,8 @@
     <body>
         <div class="site">
           <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <span><a href="{{ site.root }}/about">About</a></span><span class="rss"><a href="{{ site.root }}/rss.xml">RSS</a></span>
+            <h1 class="title"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <span><a href="{{ site.baseurl }}/about">About</a></span><span class="rss"><a href="{{ site.baseurl }}/rss.xml">RSS</a></span>
           </div>
           {{ content }}
           <div class="footer">

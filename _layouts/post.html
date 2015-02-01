@@ -2,11 +2,11 @@
 layout: default
 ---
 <div class="projects">
-	{% if page.preview-image %}<img src="{{ site.root }}/img/{{ page.preview-image }}">{% endif %}
+	{% if page.preview-image %}<img src="{{ site.baseurl }}/img/{{ page.preview-image }}">{% endif %}
 	{{ content }}
 
 	<div class="nav">
-		{% if page.previous.url %} <a class="prev" href="{{page.previous.url}}">&laquo;Previous</a>{% endif %} 
-	    {% if page.next.url %}<a class="next" href="{{page.next.url}}">Next&raquo;</a>{% endif %} 
+		{% if page.previous.url %} <a class="prev" href="{{ site.baseurl }}/{{page.previous.url | remove_first:"/"}}">&laquo;Previous</a>{% endif %} 
+	    {% if page.next.url %}<a class="next" href="{{ site.baseurl }}/{{page.next.url | remove_first:"/"}}">Next&raquo;</a>{% endif %} 
 	</div>
 </div>
