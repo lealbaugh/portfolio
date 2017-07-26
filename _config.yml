@@ -2,6 +2,6 @@ name: Things Lea Made
 url: http://www.instamatique.com/portfolio/
 baseurl: /portfolio
 markdown: kramdown
-pygments: false
+highlighter: null
 permalink: none
 exclude: [Rakefile]
