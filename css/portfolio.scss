@@ -1,17 +1,18 @@
 /*This CSS generated with Sass and written by Lea Albaugh.*/
 
-$background-color: #ffffff;
-$excess-background-color: #cccccc;
 $text-color: #333333;
+$excess-background-color: #cccccc;
 
-$serif: "PT Serif", serif;
-$header-font: "Bitter", serif;
-$sans: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
-
+$background-color: #ffffff;
 $link-color: darken(#00c2ce,5);
 $link-visited-color: $link-color;
 $link-hover-color: $link-color;
+
+$serif: "Georgia", serif;
+$header-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
+
 
 $media-mobile-max: 767px;
 $media-tablet-min: 768px;
@@ -67,7 +68,8 @@ $media-desktop-min: 1025px;
 html {
 	height: 100%; 
 	width: 100%;
-	background-color: $excess-background-color;
+	background-color: $background-color;
+	/*background-color: $excess-background-color;*/
 }
 
 body { 
@@ -76,7 +78,7 @@ body {
 	margin: 0 auto;
 	background-color: $background-color;
 	color: $text-color;
-	font-family: $sans;
+	font-family: $serif;
 }
 
 .site {
@@ -87,19 +89,34 @@ body {
 	@include flex(1);
 	font-family: $header-font;
 	padding:15px;
+	h1 {
+		line-height: 1em;
+		padding-bottom: 0.5em;
+	}
 }
 
 .projects {
-	@include flex(10);
+	background-color: white;
+
+	@include flexbox;
+	@include flex-dir(row);
+	@include flex-wrap(wrap);
+	@include justify-content(space-between);
+	@include align-content(space-between);
 	p {
 		padding-top: 0.5em;
-		img + img {
-			margin-top: 0.5em;
-		}
-	}	
-/*	p + p {
+
+	}
+	p + p {
 		margin-top: 0.5em;
-	}*/
+	}
+
+	.project {
+		min-width: 100px;
+		max-width: 200px;
+		width:32%;
+		padding-bottom: 0.5em;
+	}
 }
 
 .footer {
@@ -109,14 +126,7 @@ body {
 	padding: 15px;
 }
 
-.project + .project {
-	padding-top: 0.5em;
-}
 
-.about {
-	@extend .projects;
-	@include align-self(baseline);
-}
 
 a {
 	text-decoration: none;
@@ -143,6 +153,37 @@ img {
 	a.next {
 		float:right;
 	}
+}
+
+.about {
+	@extend .projects;
+	@include flex-dir(column);
+	@include flex-wrap(nowrap);
+	@include justify-content(flex-start);
+	@include align-content(flex-start);
+/*	* {
+		outline: 1px red solid;
+	}*/
+}
+.about .colophon {
+	color: lighten($text-color, 50);
+	justify-content: flex-end;
+	margin-top: auto;
+
+}
+.colophon:before {
+	content: " ";
+	display: block;
+	padding-top: 1em;
+	margin-top: 1em;
+	border-top: 1px lighten($text-color, 50) solid;
+}
+
+.about .paper {
+	margin-top: 0.5em;
+	margin-left: 1em;
+	padding-left: 0.5em;
+	border-left: 2px $link-color solid;
 }
 
 

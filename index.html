@@ -6,7 +6,7 @@ layout: default
     {% for post in site.posts %}
     <div class="project">
 
-        {% if post.preview-image %}<div class="preview-image"><a href="{{ post.url | remove_first:"/" }}"><img src="{{ site.baseurl }}/img/{{ post.preview-image }}"></a></div>{% endif %}
+        {% if post.preview-image %}<div class="preview-image"><a href="{{ post.url | remove_first:"/" }}"><img src="{{ site.baseurl }}/img/thumbs/{{ post.preview-image }}" title="{{ post.title }}"></a></div>{% endif %}
     </div>
     {% endfor %}
 </div>
