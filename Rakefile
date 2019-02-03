@@ -6,7 +6,7 @@ require "stringex"
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
 ssh_user       = "lea@instamatique.com"
 ssh_port       = "22"
-document_root  = "~/instamatique.com/portfolio"
+document_root  = "~/instamatique.com/"
 rsync_delete   = false
 rsync_args     = ""  # Any extra arguments to pass to rsync
 deploy_default = "rsync"
