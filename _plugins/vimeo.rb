@@ -11,7 +11,7 @@ module Jekyll
 
     def initialize(name, id, tokens)
       super
-      @id = id
+      @id = id.strip
     end
 
     def render(context)

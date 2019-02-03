@@ -83,6 +83,7 @@ body {
 
 .site {
 	background-color: $background-color;
+	width: 100%;
 }
 
 .header {
@@ -236,14 +237,15 @@ img {
  .videoWrapper {
     @extend img;
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 25px;
+    padding-bottom: 56.25%;  /*16:9 */
+	padding-top: 25px;
     margin-top: 0.5em;
     height: 0;
     border-right: 1px #ccc solid;
+    width: 100%;
   }
   .videoWrapper iframe {
-    position: absolute;
+  position: absolute;
     top: 0;
     left: 0;
     width: 100%;
